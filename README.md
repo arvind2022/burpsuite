@@ -1,6 +1,6 @@
 # BURP_SUITE
 
-<img src="https://portswigger.net/content/images/logos/thumbnail.png" width="200" height="200"/>
+<img src="https://assets.gitlab-static.net/uploads/-/system/project/avatar/16865306/thumbnail.png" width="200" height="200"/>
 
 ## INDEX
 
