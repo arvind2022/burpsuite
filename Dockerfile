@@ -1,6 +1,6 @@
 FROM openjdk:8-jre-slim
 
-LABEL authors https://www.oda-alexandre.com/
+LABEL authors https://www.oda-alexandre.com
 
 ENV USER burpsuite
 ENV HOME /home/${USER}
