@@ -1,10 +1,9 @@
 FROM openjdk:8-jre-slim
 
-LABEL authors https://www.oda-alexandre.com/
+LABEL authors https://www.oda-alexandre.com
 
 ENV USER burpsuite
 ENV HOME /home/${USER}
-ENV LOCALES fr_FR.UTF-8
 ENV VERSION 2020.1
 ENV PORTS 8080
 ENV DEBIAN_FRONTEND noninteractive
@@ -13,7 +12,6 @@ ENV APP https://portswigger.net/burp/releases/download?product=community&version
 RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m' && \
   apt-get update && apt-get install --no-install-recommends -y \
   sudo \
-  locales \
   software-properties-common \
   ttf-dejavu \
   wget \
@@ -24,9 +22,6 @@ RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m' && \
   libxi6 \
   font-manager \
   libfreetype6
-
-RUN echo -e '\033[36;1m ******* CHANGE LOCALES ******** \033[0m' && \
-  locale-gen ${LOCALES}
 
 RUN echo -e '\033[36;1m ******* ADD USER ******** \033[0m' && \
   useradd -d ${HOME} -m ${USER} && \

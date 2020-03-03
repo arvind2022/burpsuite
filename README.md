@@ -1,10 +1,10 @@
 # BURP_SUITE
 
-<img src="https://assets.gitlab-static.net/uploads/-/system/project/avatar/16865306/thumbnail.png" width="200" height="200"/>
+![logo](https://assets.gitlab-static.net/uploads/-/system/project/avatar/16865306/thumbnail.png)
 
 ## INDEX
 
-  - [BURP_SUITE](#burpsuite)
+- [BURP_SUITE](#burpsuite)
   - [INDEX](#index)
   - [BADGES](#badges)
   - [INTRODUCTION](#introduction)
