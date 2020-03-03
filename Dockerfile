@@ -21,13 +21,7 @@ RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m' && \
   libxtst6 \
   libxi6 \
   font-manager \
-  libfreetype6 \
-  && \
-  echo -e '\033[36;1m ******* CLEANING ******** \033[0m' && \
-  apt-get --purge autoremove -y && \
-  apt-get autoclean -y && \
-  rm /etc/apt/sources.list && \
-  rm -rf /var/cache/apt/archives/* && \
+  libfreetype6 && \
   rm -rf /var/lib/apt/lists/*
 
 RUN echo -e '\033[36;1m ******* ADD USER ******** \033[0m' && \
@@ -45,8 +39,8 @@ RUN echo -e '\033[36;1m ******* INSTALL APP ******** \033[0m' && \
   sudo mkdir /burp && \
   sudo chown -R ${USER}:${USER} /burp && \
   wget -q -O /burp/burpsuite.jar ${APP} && \
-  sudo apt-get --purge autoremove -y wget && \
-  mkdir -p ${HOME}/.java/.userPrefs/burp/
+  mkdir -p ${HOME}/.java/.userPrefs/burp/ &&  \
+  sudo apt-get --purge autoremove -y wget
 
 RUN echo -e '\033[36;1m ******* ADD USER TO GROUP ******** \033[0m' && \
   sudo addgroup burp && \
