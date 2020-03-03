@@ -1,0 +1,11 @@
+services:
+  burpsuite:
+    container_name: burpsuite
+    image: alexandreoda/burpsuite
+    privileged: false
+    environment:
+      - DISPLAY
+    network_mode: host
+    volumes:
+      - "${HOME}:/home/burpsuite"
+      - "/tmp/.X11-unix/:/tmp/.X11-unix/"

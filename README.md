@@ -38,6 +38,25 @@ Use [docker](https://www.docker.com)
 
 ```docker run -d --name burpsuite -v ${HOME}:/home/burpsuite -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY --network host alexandreoda/burpsuite```
 
+### DOCKER COMPOSE
+
+```yml
+version: "3.7"
+
+services:
+  atom:
+    container_name: atom
+    image: alexandreoda/atom
+    privileged: false
+    environment:
+      - DISPLAY
+    network_mode: host
+    volumes:
+      - "${HOME}:/home/atom"
+      - "/tmp/.X11-unix/:/tmp/.X11-unix/"
+      - "/dev/bus/usb:/dev/bus/usb"
+```
+
 ## LICENSE
 
 [![GPLv3+](http://gplv3.fsf.org/gplv3-127x51.png)](https://gitlab.com/oda-alexandre/burpsuite/blob/master/LICENSE)
