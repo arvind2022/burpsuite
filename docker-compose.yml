@@ -1,3 +1,5 @@
+version: "3.7"
+
 services:
   burpsuite:
     container_name: burpsuite
@@ -5,7 +7,7 @@ services:
     privileged: false
     environment:
       - DISPLAY
-    network_mode: host
     volumes:
       - "${HOME}:/home/burpsuite"
       - "/tmp/.X11-unix/:/tmp/.X11-unix/"
+    network_mode: host
