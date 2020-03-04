@@ -10,6 +10,7 @@
   - [INTRODUCTION](#introduction)
   - [PREREQUISITES](#prerequisites)
   - [INSTALL](#install)
+    - [DOCKER RUN](#docker-run)
   - [LICENSE](#license)
 
 ## BADGES
@@ -24,7 +25,7 @@ Docker image of :
 
 Continuous integration on :
 
-- [gitlab](https://gitlab.com/oda-alexandre/burpsuite/pipelines)
+- [gitlab pipelines](https://gitlab.com/oda-alexandre/burpsuite/pipelines)
 
 Automatically updated on :
 
@@ -36,6 +37,8 @@ Use [docker](https://www.docker.com)
 
 ## INSTALL
 
+### DOCKER RUN
+
 ```docker run -d --name burpsuite -v ${HOME}:/home/burpsuite -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY --network host alexandreoda/burpsuite```
 
 ### DOCKER COMPOSE
@@ -44,17 +47,16 @@ Use [docker](https://www.docker.com)
 version: "3.7"
 
 services:
-  atom:
-    container_name: atom
-    image: alexandreoda/atom
+  burpsuite:
+    container_name: burpsuite
+    image: alexandreoda/burpsuite
     privileged: false
     environment:
       - DISPLAY
-    network_mode: host
     volumes:
-      - "${HOME}:/home/atom"
+      - "${HOME}:/home/burpsuite"
       - "/tmp/.X11-unix/:/tmp/.X11-unix/"
-      - "/dev/bus/usb:/dev/bus/usb"
+    network_mode: host
 ```
 
 ## LICENSE
