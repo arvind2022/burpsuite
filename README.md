@@ -40,7 +40,8 @@ Use [docker](https://www.docker.com)
 
 ### DOCKER RUN
 
-```docker run -d --name burpsuite -v ${HOME}:/home/burpsuite -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY --p 8080:8080 alexandreoda/burpsuite
+```\
+docker  run -d --name burpsuite -v ${HOME}:/home/burpsuite -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY --p 8080:8080 alexandreoda/burpsuite
 ```
 
 ### DOCKER COMPOSE
