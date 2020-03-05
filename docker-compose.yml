@@ -4,10 +4,12 @@ services:
   burpsuite:
     container_name: burpsuite
     image: alexandreoda/burpsuite
+    restart: "no"
     privileged: false
     environment:
       - DISPLAY
     volumes:
       - "${HOME}:/home/burpsuite"
       - "/tmp/.X11-unix/:/tmp/.X11-unix/"
-    network_mode: host
+    ports:
+      - "8080:8080"

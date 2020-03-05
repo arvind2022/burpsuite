@@ -11,6 +11,7 @@
   - [PREREQUISITES](#prerequisites)
   - [INSTALL](#install)
     - [DOCKER RUN](#docker-run)
+    - [DOCKER COMPOSE](#docker-compose)
   - [LICENSE](#license)
 
 ## BADGES
@@ -39,7 +40,8 @@ Use [docker](https://www.docker.com)
 
 ### DOCKER RUN
 
-```docker run -d --name burpsuite -v ${HOME}:/home/burpsuite -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY --network host alexandreoda/burpsuite```
+```docker run -d --name burpsuite -v ${HOME}:/home/burpsuite -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY --p 8080:8080 alexandreoda/burpsuite
+```
 
 ### DOCKER COMPOSE
 
@@ -50,13 +52,15 @@ services:
   burpsuite:
     container_name: burpsuite
     image: alexandreoda/burpsuite
+    restart: "no"
     privileged: false
     environment:
       - DISPLAY
     volumes:
       - "${HOME}:/home/burpsuite"
       - "/tmp/.X11-unix/:/tmp/.X11-unix/"
-    network_mode: host
+    ports:
+      - "8080:8080"
 ```
 
 ## LICENSE
