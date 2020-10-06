@@ -2,12 +2,11 @@
 
 ![logo](https://assets.gitlab-static.net/uploads/-/system/project/avatar/16865306/thumbnail.png)
 
-- [BURP_SUITE](#burpsuite)
-  - [INDEX](#index)
+- [BURP_SUITE](#burp_suite)
   - [BADGES](#badges)
   - [INTRODUCTION](#introduction)
   - [PREREQUISITES](#prerequisites)
-  - [INSTALL](#install)
+  - [BUILD](#build)
     - [DOCKER RUN](#docker-run)
     - [DOCKER COMPOSE](#docker-compose)
   - [LICENSE](#license)
@@ -44,6 +43,7 @@ docker run -d \
 -e DISPLAY \
 -v ${HOME}:/home/burpsuite \
 -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+-v /etc/localtime:/etc/localtime:ro \
 --p 8080:8080 \
 alexandreoda/burpsuite
 ```
@@ -64,6 +64,7 @@ services:
     volumes:
       - "${HOME}:/home/burpsuite"
       - "/tmp/.X11-unix/:/tmp/.X11-unix/"
+      - "/etc/localtime:/etc/localtime:ro"
     ports:
       - "8080:8080"
 ```
